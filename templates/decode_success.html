@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stego Security</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='Resources/css/lookss.css')}}">
+</head>
+<body>
+    <video autoplay muted loop id="backvideo" src="{{url_for('static',filename='Resources/media/videos/landing_page.mp4')}}"></video>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <img src="{{url_for('static',filename='Resources/media/photos/logo.png')}}" alt="">
+                <h2>Stego Security</h2>
+            </div>
+        </header>
+    </div>
+    <div class="container full">
+        <div class="banner2">
+            <div class="instruction">
+                <h1>Image Decoded Successfully</h1>
+            </div>
+            <div class="file_container">
+                <div class="image_container">
+                    <img alt="" id="blah" src="{{url_for('static',filename=params.link)}}">
+                </div>
+                <div class="form_container" style="color: white; font-size: 18px; font-family: 'Poppines', sans-serif;">
+                    <label for="decode">Your Secret Message</label>
+                    <textarea name="decode_output" id="decode_output" cols="30" rows="10" disabled style="color:white;background-color: black;">{{params.data}}</textarea>
+                    <input type="button" class="btn" value="Copy to Clipboard" onclick="myFunction()">
+                </div>
+                
+            </div>
+            <!-- <hr style="color: white; width: 100%;"> -->
+            <div class="favcon" style="margin-top:10px;margin-bottom:20px;">
+                <button onclick="window.location.href = 'encode'">Encode</button>
+                <button onclick="window.location.href = 'decode'">Decode</button>
+                </div>
+        </div>
+        
+    </div>
+    <div class="container">
+        <footer>
+            <p>
+                Copyright : 2024,NSEC-AJSS
+            </p>
+        </footer>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="{{url_for('static',filename='Resources/js/brain.js')}}"></script>
+</body>
+</html>
