@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stego Security</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='Resources/css/looks.css')}}">
+</head>
+<body>
+    <video autoplay muted loop id="backvideo" src="{{url_for('static',filename='Resources/media/videos/landing_page.mp4')}}"></video>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <img src="{{url_for('static',filename='Resources/media/photos/logo.png')}}" alt="">
+                <h2>Stego Security</h2>
+            </div>
+        </header>
+    </div>
+    <div class="container">
+        <div class="banner2">
+            <div class="instruction">
+                <h1>Unlock Your Message</h1>
+                <p>To decode a hidden message from an image, just choose the encoded image, enter the security key & hit the Get Message button.</p>
+                <p>Neither the image nor the message you hide will be at any moment transmitted over the web, all the magic happens within your browser.</p>
+            </div>
+            <div class="file_container">
+                <div class="image_container">
+                    <img src="{{url_for('static',filename='Resources/media/photos/select.png')}}" alt="" id="blah">
+
+                </div>
+                <form class="form_container" action="/decode" method="POST" enctype="multipart/form-data" id="decodeForm">
+                    <input type="file" name="file" id="file" onchange="readURL(this);" hidden>
+                    <label for="file" class="lable">Select the Image</label>
+                    
+                    <input type="password" name="pass" id="key" placeholder="password">
+                    
+                </form>
+                <input type="button" name="submit" id="submit" value="Process" onClick="submitDecode(this);">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <footer>
+            <p>
+                Copyright : 2024,NSEC-AJSS
+            </p>
+        </footer>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="{{url_for('static',filename='Resources/js/brain.js')}}"></script>
+</body>
+</html>
