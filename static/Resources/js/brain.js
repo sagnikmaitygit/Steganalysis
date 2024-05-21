@@ -1,5 +1,5 @@
 function readURL(input) {
-    console.log("Souvik s great")
+    console.log("Sagnik is great")
     if (input.files && input.files[0]) {
         var reader = new FileReader();
 
