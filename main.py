@@ -83,4 +83,4 @@ def decode_file():
             return render_template("decode_error.html",params={"error":True, "message":"Wrong Data Provided"})
         return render_template("decode_success.html",params=result)
     return render_template("decode_error.html",params={"error":True, "message":"Please Upload A valid Image."})
-app.run(host="0.0.0.0", port=20000)
+app.run(host="0.0.0.0", port=10000)
